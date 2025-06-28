@@ -1,0 +1,18 @@
+<div class="app-container">
+    <div class="no-assets-container rounded-container">
+        <fa-icon [icon]="['fas', 'hand-holding-dollar']" size="5x" class="icon-holding-money"></fa-icon>
+        <br />
+        <div>
+            <div style="font-weight: bold; font-size: 30px;">No Assets</div>
+            <div style="font-weight: 600; font-size: 23px;">You currently don't have any assets...</div>
+        </div>
+        <button 
+        type="button" 
+        class="btn btn-outline-success add-assets-btn custom-outline-success"
+        (click)="openModal()">
+            <span style="font-size: 26px">
+                Add Assets
+            </span>
+        </button>    
+    </div>
+</div>

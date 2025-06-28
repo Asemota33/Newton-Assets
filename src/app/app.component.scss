@@ -1,0 +1,39 @@
+
+.app-container {
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.no-assets-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 470px;
+    width: 850px;
+    text-align: center;
+    position: absolute;
+    top: 50px;
+    color: #000000;
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;;
+
+}
+
+.icon-holding-money {
+    color: #56B059;
+    height: 91px;
+    width: 103px;
+}
+
+.add-assets-btn {
+    width: 258px;
+    height: 72px;
+    margin-top: 50px;
+    border-radius: 46px;
+    font-weight: bold;
+}
+

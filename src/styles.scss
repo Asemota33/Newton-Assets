@@ -2,3 +2,35 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+/* Importing Open Sans Font file. */
+@import 'typeface-open-sans';
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding-top: 0px;
+  }
+
+.custom-outline-success {
+    --bs-btn-color: #56B059;
+    --bs-btn-border-color: #56B059;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #56B059;
+    --bs-btn-hover-border-color: #56B059;
+    --bs-btn-focus-shadow-rgb: #56B059;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #56B059;;
+    --bs-btn-active-border-color: #56B059;
+}
+
+.rounded-container {
+    border-radius: 25px;
+    border: 1px solid #CCCCCC;
+    background-color: #FFFFFF;
+}
+
+.rounded-button {
+    border-radius: 46px;
+    font-weight: bold;
+}
