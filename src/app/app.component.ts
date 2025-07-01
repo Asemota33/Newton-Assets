@@ -16,11 +16,11 @@ import { AddAssetsModalComponent } from './add-assets-modal/add-assets-modal.com
 export class AppComponent {
   constructor(library: FaIconLibrary, private modalService: NgbModal) {
     library.addIcons(
-      faHandHoldingDollar
+      faHandHoldingDollar,
     )
   }
 
   openModal() {
-    this.modalService.open(AddAssetsModalComponent);
+    this.modalService.open(AddAssetsModalComponent, { size: 'xl' });
   }
 }

@@ -22,6 +22,8 @@ html, body {
     --bs-btn-active-color: #ffffff;
     --bs-btn-active-bg: #56B059;;
     --bs-btn-active-border-color: #56B059;
+    --bs-btn-border-radius: 46px;
+    --bs-btn-font-weight: bold;
 }
 
 .rounded-container {
@@ -33,4 +35,9 @@ html, body {
 .rounded-button {
     border-radius: 46px;
     font-weight: bold;
+}
+
+.icon-trash {
+    height: 56px;
+    width: 56px;
 }
