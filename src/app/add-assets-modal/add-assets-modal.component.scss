@@ -1,31 +1,18 @@
-.modal {
-    height: 450px;
-    width: 600px;
-}
-
-.modal-body-container {
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.modal-title {
-    display: flex;
-    gap: 20px;
-    align-items: flex-end;
-}
-
 .icon-holding-money {
     color: #56B059;
-
 }
 
-.modal-title-text {
-    font-size: 30px;
-    font-weight: bold;
+.add-asset-link {
+    color:#56B059;
+    text-decoration: none;
 }
 
-.input-non-button {
-    width: 100%;
+.modal-pill-btn {
+    height: 72px;
+    width: 169px;
+}
+
+.modal-pill-btn {
+    height: 72px;
+    width: 169px;
 }
