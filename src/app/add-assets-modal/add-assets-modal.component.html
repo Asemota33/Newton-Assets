@@ -46,10 +46,6 @@
                 [autofocus]="
                   typeCtrl.invalid && (typeCtrl.touched || assetForm.submitted)
                 "
-                [ngbPopover]="'Please select a valid asset type.'"
-                [popoverClass]="'popover-danger'"
-                [autoClose]="'outside'"
-                #p="ngbPopover"
               >
                 <option selected disabled value="">- Select -</option>
                 <option value="Gift">Gift</option>
@@ -80,10 +76,6 @@
                     (valueCtrl.touched || assetForm.submitted)
                   "
                   (blur)="formatValue(asset)"
-                  [ngbPopover]="'Please enter a valid amount.'"
-                  [popoverClass]="'popover-danger'"
-                  [autoClose]="'outside'"
-                  #p1="ngbPopover"
                 />
               </div>
             </div>
