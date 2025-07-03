@@ -1,21 +1,10 @@
 
 .app-container {
     background-color: #F0F0F0;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
 }
 
 .no-assets-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: absolute;
-    font-size: 1.2rem;
     height: 470px;
-
 }
 
 .icon-holding-money {
@@ -30,7 +19,4 @@
     margin-top: 50px;
 }
 
-.grey-asset-background {
-    background-color: #F0F0F0;
-}
 

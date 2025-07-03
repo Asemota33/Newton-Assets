@@ -1,12 +1,12 @@
-<div class="app-container">
+<div class="app-container d-flex justify-content-center w-100 h-100">
     
         @if(assetsList?.length === 0) {
-            <div class="no-assets-container rounded-container">
+            <div class="flex-column align-items-center justify-content-center text-center position-absolute fs-5 rounded-container no-assets-container">
                 <fa-icon [icon]="['fas', 'hand-holding-dollar']" size="5x" class="icon-holding-money"></fa-icon>
                 <br />
                 <div>
-                    <div style="font-weight: bold; font-size: 30px;">No Assets</div>
-                    <div style="font-weight: 600; font-size: 23px;">You currently don't have any assets...</div>
+                    <div class="fs-2 fw-bold">No Assets</div>
+                    <div class="fs-4 fw-semibold">You currently don't have any assets...</div>
                 </div>
                 <button 
                 type="button" 
@@ -35,7 +35,7 @@
                     <div class="py-2 px-5">
                         <div  
                         [ngClass]="{ 'grey-asset-background': $index % 2 !== 0 }"
-                        class="d-flex justify-content-between align-items-center ps-4">
+                        class="d-flex justify-content-between align-items-center rounded ps-4 py-2">
                             <div class="w-100 fs-2 fw-semibold">{{ asset.type }}</div>
                             <div class="w-100 fs-2 fw-bold d-flex justify-content-between">
                                 
