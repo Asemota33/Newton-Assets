@@ -8,18 +8,13 @@
 }
 
 .no-assets-container {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 470px;
-    width: 850px;
     text-align: center;
     position: absolute;
-    top: 50px;
-    color: #000000;
     font-size: 1.2rem;
-    font-family: 'Open Sans', sans-serif;
+    height: 470px;
 
 }
 
@@ -33,5 +28,9 @@
     width: 258px;
     height: 72px;
     margin-top: 50px;
+}
+
+.grey-asset-background {
+    background-color: #F0F0F0;
 }
 

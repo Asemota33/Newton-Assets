@@ -1,18 +1,77 @@
 <div class="app-container">
-    <div class="no-assets-container rounded-container">
-        <fa-icon [icon]="['fas', 'hand-holding-dollar']" size="5x" class="icon-holding-money"></fa-icon>
-        <br />
-        <div>
-            <div style="font-weight: bold; font-size: 30px;">No Assets</div>
-            <div style="font-weight: 600; font-size: 23px;">You currently don't have any assets...</div>
-        </div>
-        <button 
-        type="button" 
-        class="btn btn-outline-success add-assets-btn custom-outline-success"
-        (click)="openModal()">
-            <span style="font-size: 26px">
-                Add Assets
-            </span>
-        </button>    
-    </div>
+    
+        @if(assetsList?.length === 0) {
+            <div class="no-assets-container rounded-container">
+                <fa-icon [icon]="['fas', 'hand-holding-dollar']" size="5x" class="icon-holding-money"></fa-icon>
+                <br />
+                <div>
+                    <div style="font-weight: bold; font-size: 30px;">No Assets</div>
+                    <div style="font-weight: 600; font-size: 23px;">You currently don't have any assets...</div>
+                </div>
+                <button 
+                type="button" 
+                class="btn btn-outline-success add-assets-btn custom-outline-success"
+                (click)="openModal()">
+                    <span style="font-size: 26px">
+                        Add Assets
+                    </span>
+                </button>   
+            </div> 
+        } @else {
+            <div class="container d-flex flex-column rounded-container p-0">
+                <div class="modal-header p-4">
+                    <h4 class="d-flex gap-3 align-items-end">
+                        <fa-icon
+                            [icon]="['fas', 'hand-holding-dollar']"
+                            size="2x"
+                            class="green align-items-center"
+                        ></fa-icon>
+                            <span class="fs-2 fw-bold">Assets</span>
+                    </h4>
+                </div>
+
+
+                @for (asset of assetsList; track $index) {
+                    <div class="py-2 px-5">
+                        <div  
+                        [ngClass]="{ 'grey-asset-background': $index % 2 !== 0 }"
+                        class="d-flex justify-content-between align-items-center ps-4">
+                            <div class="w-100 fs-2 fw-semibold">{{ asset.type }}</div>
+                            <div class="w-100 fs-2 fw-bold d-flex justify-content-between">
+                                
+                                <span class="">${{ asset?.value?.toLocaleString() }}</span>
+                                <button
+                                    type="button"
+                                    class="btn btn-danger rounded-circle icon-trash me-5"
+                                    (click)="deleteAsset($index); $event.preventDefault()"
+                                >
+                                    <fa-icon [icon]="['fas', 'trash-can']" size="2x" class=""></fa-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                }
+                <div class="border-top border-dark mx-4"></div>
+                
+                <div class="py-4 px-5">
+                    <div class="d-flex justify-content-between align-items-center ps-4">
+                        <div class="w-100 fs-2 fw-semibold">TOTAL VALUE</div>
+                        <div class="w-100 fs-2 fw-bold">${{ totalValue?.toLocaleString()  }}</div>
+                        <fa-icon [hidden]="true" [icon]="['fas', 'trash-can']" size="2x" class=""></fa-icon>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end border-top p-4">
+                    <button 
+                    type="button" 
+                    class="btn btn-outline-success add-assets-btn custom-outline-success mt-0"
+                    (click)="openModal()">
+                        <span style="font-size: 26px">
+                            Add Assets
+                        </span>
+                    </button>
+                </div>
+            </div>
+        }
+
 </div>

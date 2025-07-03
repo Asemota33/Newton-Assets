@@ -30,6 +30,12 @@ html, body {
     border-radius: 25px;
     border: 1px solid #CCCCCC;
     background-color: #FFFFFF;
+    width: 850px;
+    display: flex;
+    top: 50px;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
 }
 
 .rounded-button {
@@ -40,4 +46,8 @@ html, body {
 .icon-trash {
     height: 56px;
     width: 56px;
+}
+
+.green {
+    color: #56B059;
 }

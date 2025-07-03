@@ -16,7 +16,7 @@
     ></button>
   </div>
   <div class="modal-body px-5 py-4">
-    <div class="border rounded p-3">
+    <div class="border rounded py-3">
       <div
         class="d-flex justify-content-between px-4 pb-2 border-bottom fw-semibold"
       >
@@ -24,46 +24,60 @@
         <div class="flex-fill fw-bold fs-4">Value</div>
         <div style="width: 50px"></div>
       </div>
+      
+      @for (asset of assets; track $index) {
+        <form
+            class="d-flex w-100 gap-4 justify-content-center align-items-center px-4 mt-4"
+        >
+            <div class="w-100">
+            <select 
+            [(ngModel)]="asset.type" 
+            class="form-select form-select-lg" 
+            name="type-{{$index}}">
+                <option selected disabled value="Select">- Select -</option>
+                <option value="Gift">Gift</option>
+                <option value="Savings">Savings</option>
+                <option value="RRSP">RRSP</option>
+                <option value="Other">Other</option>
+            </select>
+            </div>
 
-      <form
-        class="d-flex w-100 gap-3 justify-content-center align-items-center px-4 mt-4"
-      >
-        <div class="w-100">
-          <select class="form-select form-select-lg" id="inlineFormSelectPref">
-            <option selected disabled>- Select -</option>
-            <option value="1">Gift</option>
-            <option value="2">Savings</option>
-            <option value="3">RRSP</option>
-            <option value="4">Other</option>
-          </select>
-        </div>
+            <div class="w-100">
+            <div class="input-group">
+                <div class="input-group-text fw-bold fs-4">$</div>
+                <input
+                type="number"
+                step="0.01"
+                [(ngModel)]="asset.value"
+                name="value-{{$index}}"
+                class="form-control form-control-lg"
+                required
+                />
+            </div>
+            </div>
 
-        <div class="w-100">
-          <div class="input-group">
-            <div class="input-group-text fw-bold fs-4">$</div>
-            <input
-              type="number"
-              step="0.01"
-              class="form-control form-control-lg"
-            />
-          </div>
-        </div>
-
-        <div class="d-flex align-items-center justify-content-center">
-          <button
-            type="button"
-            class="btn btn-danger rounded-circle icon-trash"
-          >
-            <fa-icon [icon]="['fas', 'trash-can']" size="2x" class=""></fa-icon>
-          </button>
-        </div>
-      </form>
-      <a
-        class="d-flex justify-content-end pe-4 mt-2 mb-4 align-items-center add-asset-link gap-3"
+            <div class="d-flex align-items-center justify-content-center">
+            <button
+                type="button"
+                class="btn btn-danger rounded-circle icon-trash"
+                [disabled]="deleteBtnDisabled"
+                (click)="deleteAsset($index); $event.preventDefault()"
+            >
+                <fa-icon [icon]="['fas', 'trash-can']" size="2x" class=""></fa-icon>
+            </button>
+            </div>
+        </form>
+      }
+      <div class="d-flex justify-content-end pe-4 mt-2 mb-4 align-items-center">
+        <a
+        class="add-asset-link gap-3"
+        (click)="addAsset(); $event.preventDefault()"
       >
         <fa-icon [icon]="['fas', 'circle-plus']" size="2x" class=""></fa-icon>
         <span class="fw-semibold fs-4"> Add Another Asset</span>
       </a>
+      </div>
+      
     </div>
   </div>
 
@@ -79,7 +93,7 @@
     <button
       type="button"
       class="btn btn-outline-secondary rounded-button custom-outline-success fs-4 modal-pill-btn"
-      (click)="closeModal()"
+      (click)="submitAssets()"
     >
       Save
     </button>
