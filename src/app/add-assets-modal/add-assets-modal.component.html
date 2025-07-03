@@ -34,7 +34,7 @@
             [(ngModel)]="asset.type" 
             class="form-select form-select-lg" 
             name="type-{{$index}}">
-                <option selected disabled value="Select">- Select -</option>
+                <option selected disabled value="">- Select -</option>
                 <option value="Gift">Gift</option>
                 <option value="Savings">Savings</option>
                 <option value="RRSP">RRSP</option>
@@ -43,17 +43,18 @@
             </div>
 
             <div class="w-100">
-            <div class="input-group">
-                <div class="input-group-text fw-bold fs-4">$</div>
-                <input
-                type="number"
-                step="0.01"
-                [(ngModel)]="asset.value"
-                name="value-{{$index}}"
-                class="form-control form-control-lg"
-                required
-                />
-            </div>
+              <div class="input-group">
+                  <div class="input-group-text fw-bold fs-4">$</div>
+                  <input
+                  type="number"
+                  step="0.01"
+                  [(ngModel)]="asset.value"
+                  name="value-{{$index}}"
+                  class="form-control form-control-lg"
+                  required
+                  (blur)="formatValue(asset)"
+                  />
+              </div>
             </div>
 
             <div class="d-flex align-items-center justify-content-center">

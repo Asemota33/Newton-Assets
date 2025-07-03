@@ -39,7 +39,7 @@
                             <div class="w-100 fs-2 fw-semibold">{{ asset.type }}</div>
                             <div class="w-100 fs-2 fw-bold d-flex justify-content-between">
                                 
-                                <span class="">${{ asset?.value?.toLocaleString() }}</span>
+                                <span class="">${{ asset?.value | number:'1.2-2' }}</span>
                                 <button
                                     type="button"
                                     class="btn btn-danger rounded-circle icon-trash me-5"
@@ -57,7 +57,7 @@
                 <div class="py-4 px-5">
                     <div class="d-flex justify-content-between align-items-center ps-4">
                         <div class="w-100 fs-2 fw-semibold">TOTAL VALUE</div>
-                        <div class="w-100 fs-2 fw-bold">${{ totalValue?.toLocaleString()  }}</div>
+                        <div class="w-100 fs-2 fw-bold">${{ totalValue | number:'1.2-2' }}</div>
                         <fa-icon [hidden]="true" [icon]="['fas', 'trash-can']" size="2x" class=""></fa-icon>
                     </div>
                 </div>

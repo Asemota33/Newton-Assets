@@ -43,6 +43,12 @@ export class AddAssetsModalComponent {
 
   }
 
+  formatValue(asset: any) {
+    if (asset.value !== null && asset.value !== undefined && asset.value !== '') {
+      asset.value = parseFloat(asset.value).toFixed(2);
+    }
+}
+
   closeModal() {
     this.activeModal.close();
   }

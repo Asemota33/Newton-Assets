@@ -43,6 +43,8 @@ export class AppComponent {
   }
 
   get totalValue(): number | undefined {
-    return this.assetsList?.reduce((acc, curr) => acc + (curr.value ?? 0), 0);
+   return Number(
+    this.assetsList?.reduce((acc, curr) => acc + parseFloat(String(curr.value ?? '0')), 0).toFixed(2)
+    );
   }
 }
