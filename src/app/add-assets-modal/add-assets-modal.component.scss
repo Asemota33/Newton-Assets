@@ -23,3 +23,11 @@
   color: #9e9e9e !important; 
   opacity: 1 !important;
 }
+
+.btn-outline-dark {
+  &:hover {
+    background-color: #F2F2F2;
+    color: #000000;
+    border-color: #000000;
+  }
+}

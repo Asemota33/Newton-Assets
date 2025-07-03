@@ -40,8 +40,8 @@
                 #typeCtrl="ngModel"
                 [ngClass]="{
                   'is-invalid':
-                    valueCtrl.invalid &&
-                    (valueCtrl.touched || assetForm.submitted)
+                    typeCtrl.invalid &&
+                    (typeCtrl.touched || assetForm.submitted)
                 }"
                 [autofocus]="
                   typeCtrl.invalid && (typeCtrl.touched || assetForm.submitted)
@@ -128,7 +128,7 @@
     <div class="modal-footer d-flex justify-content-between px-5 pb-5 pt-2">
       <button
         type="button"
-        class="btn btn-outline-secondary rounded-button fs-4 modal-pill-btn"
+        class="btn btn-outline-dark rounded-button fs-4 modal-pill-btn"
         (click)="closeModal()"
       >
         Close
